@@ -78,6 +78,10 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Enter password",Toast.LENGTH_SHORT ).show();
                     return;
                 }
+                if(password.length() < 8){
+                    Toast.makeText(Login.this,"password must be more than 8 characters!",Toast.LENGTH_SHORT ).show();
+
+                }
 
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

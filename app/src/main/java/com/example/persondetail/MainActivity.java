@@ -1,5 +1,4 @@
 package com.example.persondetail;
-
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
@@ -10,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,6 +31,7 @@ import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton buttonReg;
     FirebaseAuth mAuth;
     TextView loginNow;
-
-
     @Override
     public void onStart() {
         super.onStart();
@@ -75,31 +74,43 @@ public class MainActivity extends AppCompatActivity {
                finish();
            }
        });
-
-
-
     buttonReg.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String email,  password;
+            String email, password, fname, lname;
             email = String.valueOf(Email.getText());
             password = String.valueOf( Password.getText());
+            fname = String.valueOf(Fname.getText());
+            lname = String.valueOf(Lname.getText());
 
+            if(TextUtils.isEmpty(fname)){
+                Toast.makeText(MainActivity.this,"Enter first name",Toast.LENGTH_SHORT ).show();
 
-            if(TextUtils.isEmpty(email)){
+            }
+           else if(TextUtils.isEmpty(lname)){
+                Toast.makeText(MainActivity.this,"Enter Last name",Toast.LENGTH_SHORT ).show();
+
+            }
+           else if(TextUtils.isEmpty(email)){
                 Toast.makeText(MainActivity.this,"Enter Email",Toast.LENGTH_SHORT ).show();
 
             }
-
             else if(TextUtils.isEmpty(password)){
                 Toast.makeText(MainActivity.this,"Enter password",Toast.LENGTH_SHORT ).show();
 
-            }else{
+            }
+            else if(password.length() < 8){
+                Toast.makeText(MainActivity.this,"password must be more than 8 characters!",Toast.LENGTH_SHORT ).show();
+
+            }
+            else{
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 HashMap<String,String> data=new HashMap<>();
                 data.put("Email",Email.getText().toString());
                 data.put("First Name",Fname.getText().toString());
                 data.put("Last Name",Lname.getText().toString());
+                data.put("password",Password.getText().toString());
+
                 db.collection("Users")
                         .document(Email.getText().toString()).set(data)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -117,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-
-
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                         @Override
@@ -132,9 +141,6 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
 
-
-
-
                             } else {
                                 // If sign in fails, display a message to the user.
 
@@ -147,7 +153,5 @@ public class MainActivity extends AppCompatActivity {
     });
 
     }
-
-
 
 }
