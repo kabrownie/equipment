@@ -15,7 +15,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".tabbed"
+            android:name=".test"
+            android:exported="false" />
+        <activity
+            android:name=".Description"
             android:exported="false" />
         <activity
             android:name=".view"

@@ -106,8 +106,8 @@ public class MainActivity extends AppCompatActivity {
             else{
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 HashMap<String,String> data=new HashMap<>();
-                data.put("Email",Email.getText().toString());
-                data.put("First Name",Fname.getText().toString());
+                data.put("Email",email);
+                data.put("First Name",fname);
                 data.put("Last Name",Lname.getText().toString());
                 data.put("password",Password.getText().toString());
 
