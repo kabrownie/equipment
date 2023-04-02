@@ -24,7 +24,7 @@ import java.util.Objects;
 
 public class Description extends AppCompatActivity {
     TextView name, price, description;
-    TextView userDtl;
+//    String userDtl;
     FirebaseUser user;
     FirebaseAuth auth;
     @Override
@@ -35,7 +35,6 @@ public class Description extends AppCompatActivity {
         description = findViewById(R.id.item_description);
         price = findViewById(R.id.item_price);
         auth = FirebaseAuth.getInstance();
-        userDtl = findViewById(R.id.userdetail);
         user = auth.getCurrentUser();
 
         if (user == null) {
@@ -43,7 +42,7 @@ public class Description extends AppCompatActivity {
             startActivity(intent);
 
         } else {
-            userDtl.setText(user.getEmail());
+
 
         //Get text from Intent
         Intent intent = getIntent();
@@ -57,8 +56,8 @@ public class Description extends AppCompatActivity {
     }
 
         //add to firebse
-        Button logout = findViewById(R.id.addItemButton);
-        logout.setOnClickListener(new View.OnClickListener()  {
+        Button add = findViewById(R.id.addItemButton);
+        add.setOnClickListener(new View.OnClickListener()  {
 
             @Override
             public void onClick(View v) {
@@ -70,7 +69,7 @@ public class Description extends AppCompatActivity {
                 data.put("Price",price.getText().toString());
                 data.put("Description",description.getText().toString());
 
-                db.collection((Objects.requireNonNull(user.getEmail())))
+                db.collection((Objects.requireNonNull("in-> "+user.getEmail())))
                         .document(name.getText().toString()).set(data)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -88,6 +87,7 @@ public class Description extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
+
                             }
                         });
 

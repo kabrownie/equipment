@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    >
+
+    <!-- Item Name -->
+    <TextView
+        android:id="@+id/title_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item Here"
+        android:textColor="#00a8dd"
+        />
+
+    <!-- Item Name -->
+    <TextView
+        android:id="@+id/item_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Name"/>
+
+    <EditText
+        android:id="@+id/item_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+    <!-- Item Price -->
+    <TextView
+        android:id="@+id/item_price_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Price"/>
+
+    <EditText
+        android:id="@+id/item_price_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <!-- Phone Number -->
+    <TextView
+        android:id="@+id/phone_number_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"/>
+
+    <EditText
+        android:id="@+id/phone_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"/>
+    <!-- Item ID -->
+    <TextView
+        android:id="@+id/item_id_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item ID"
+        />
+
+    <EditText
+        android:id="@+id/item_id_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        />
+
+    <!-- Item Description -->
+    <TextView
+        android:id="@+id/item_description_label"
+        android:layout_width="match_parent"
+        android:text="Item Description"
+        android:layout_height="120dp"
+        android:inputType="textMultiLine"
+        />
+
+    <EditText
+        android:id="@+id/item_description_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+
+
+
+    <!-- Add Item Button -->
+    <Button
+        android:id="@+id/add_item_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textColor="#ffffff"
+        android:text="Add Item"/>
+
+</LinearLayout>

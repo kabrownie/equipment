@@ -36,7 +36,7 @@ public class rentItems extends Fragment {
 
     FirebaseAuth auth;
 //    MaterialButton logout;
-    TextView userDtl;
+
     FirebaseUser user;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,17 +51,10 @@ public class rentItems extends Fragment {
 
         auth = FirebaseAuth.getInstance();
        // logout = view.findViewById(R.id.logout);
-        userDtl = view.findViewById(R.id.userdetail);
         user = auth.getCurrentUser();
 //
 
-        if (user == null) {
-            Intent intent = new Intent(getActivity(), Login.class);
-            startActivity(intent);
 
-        } else {
-            userDtl.setText(user.getEmail());
-        }
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

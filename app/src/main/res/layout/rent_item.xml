@@ -10,11 +10,7 @@
 
     tools:context=".tabfragments.rentItems">
 
-    <TextView
-        android:id="@+id/userdetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello world" />
+
     <TextView
 
         android:layout_width="wrap_content"

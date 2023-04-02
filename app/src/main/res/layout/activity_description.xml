@@ -6,12 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Description"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/userdetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello world" />
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oxford_blue"
+        android:id="@+id/appbar">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Rent This Item"
+            android:textColor="@color/white"
+            android:textSize="30sp"/>
+    </com.google.android.material.appbar.AppBarLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

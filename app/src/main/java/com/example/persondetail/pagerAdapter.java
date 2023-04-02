@@ -8,7 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.persondetail.tabfragments.rentItems;
 import com.example.persondetail.tabfragments.tab2;
 import com.example.persondetail.tabfragments.tab3;
-import com.example.persondetail.tabfragments.tab4;
+import com.example.persondetail.tabfragments.myItems;
 
 public class pagerAdapter extends FragmentStateAdapter {
      public pagerAdapter(@NonNull FragmentActivity fragmentActivity) {
@@ -26,7 +26,7 @@ switch (position){
     case 2:
         return new tab3();
     case 3:
-        return new tab4();
+        return new myItems();
 
 }
         return null;
