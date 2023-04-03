@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Description extends AppCompatActivity {
-    TextView name, price, description;
+    TextView name, price, description, phone,itemid,email;
 //    String userDtl;
     FirebaseUser user;
     FirebaseAuth auth;
@@ -34,6 +34,10 @@ public class Description extends AppCompatActivity {
         name = findViewById(R.id.item_name);
         description = findViewById(R.id.item_description);
         price = findViewById(R.id.item_price);
+        phone = findViewById(R.id.item_phone);
+        email =findViewById(R.id.item_email);
+        itemid = findViewById(R.id.item_Id);
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
@@ -46,17 +50,30 @@ public class Description extends AppCompatActivity {
 
         //Get text from Intent
         Intent intent = getIntent();
-        String getName = intent.getStringExtra("name");
-        String getDescription = intent.getStringExtra("description");
-        String getPrice = intent.getStringExtra("price");
-        //Set Text
+        String getName = intent.getStringExtra("Item Name");
+        String getDescription = intent.getStringExtra("Item Description");
+        String getPrice = intent.getStringExtra("Item Price");
+            String getId = intent.getStringExtra("Item Id");
+            String getemail = intent.getStringExtra("email");
+            String getphone = intent.getStringExtra("Phone");
+
+            //Set Text
         name.setText(getName);
         price.setText(getPrice);
+        itemid.setText(getId);
         description.setText(getDescription);
-    }
+            email.setText(getemail);
+       phone.setText(getphone);
 
+        if (!Objects.equals(user.getEmail(), getemail)){
+
+
+
+                TextView bar = findViewById(R.id.bar);
+                bar.setText("Rent  this item");
         //add to firebse
         Button add = findViewById(R.id.addItemButton);
+            add.setVisibility(View.VISIBLE);
         add.setOnClickListener(new View.OnClickListener()  {
 
             @Override
@@ -65,11 +82,16 @@ public class Description extends AppCompatActivity {
 //                startActivity(intent);
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 HashMap<String,String> data=new HashMap<>();
-                data.put("Name",name.getText().toString());
-                data.put("Price",price.getText().toString());
-                data.put("Description",description.getText().toString());
+                data.put("Item Name",name.getText().toString());
+                data.put("Item Description",description.getText().toString());
+                data.put("Item Id",itemid.getText().toString());
+                data.put("Item Price",price.getText().toString());
 
-                db.collection((Objects.requireNonNull("in-> "+user.getEmail())))
+                data.put("Phone",phone.getText().toString());
+                data.put("email",email.getText().toString());
+
+
+                db.collection(("in-"+user.getEmail()))
                         .document(name.getText().toString()).set(data)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -94,4 +116,4 @@ public class Description extends AppCompatActivity {
             }
         });
 
-}}
+}}}}

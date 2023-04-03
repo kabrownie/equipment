@@ -72,14 +72,15 @@ public class rentItems extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("TestItems")
+        db.collection("All Items")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                itemModelArrayList.add(new ItemModel(document.getString("Name"), document.getString("Price"), document.getString("Description")));
+                                itemModelArrayList.add(new ItemModel(document.getString("Item Name"), document.getString("Item Price"), document.getString("Item Description"),
+                                        document.getString("Phone"),document.getString("Item Id"),document.getString("email")));
                                 ItemsAdapter itemAdapter = new ItemsAdapter(getContext(), itemModelArrayList);
 
                                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);

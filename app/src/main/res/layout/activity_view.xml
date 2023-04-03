@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Equipment Renting   "
+        android:text="RENT IT  "
         android:gravity="right"
         android:textSize="20sp"
         android:textColor="@color/white"
@@ -30,8 +30,9 @@
         />
         <TextView
             android:id="@+id/userdetail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="end"
             android:textColor="@color/white"
             android:text="Hello world" />
 
@@ -46,6 +47,7 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="130dp"
         android:layout_below="@+id/appbar"
+
         android:id="@+id/tabs">
 
         <com.google.android.material.tabs.TabItem
@@ -67,7 +69,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tab 4" />
+            android:text="Post" />
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"

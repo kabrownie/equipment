@@ -52,6 +52,35 @@
             android:layout_below="@+id/item_price"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/item_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemDescription"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/item_emailtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:text="posted by "
+            android:textSize="15sp"
+            android:layout_below="@+id/item_phone"
+            />
+        <TextView
+            android:id="@+id/item_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/item_emailtag"
+            android:layout_below="@id/item_phone"
+             />
+        <TextView
+            android:id="@+id/item_Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+          android:layout_below="@id/item_email" />
        
     </RelativeLayout>
 

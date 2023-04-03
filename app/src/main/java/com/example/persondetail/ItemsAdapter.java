@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
@@ -40,14 +42,29 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
                 TextView name = view.findViewById(R.id.item_name);
                 TextView price = view.findViewById(R.id.item_price);
                 TextView description = view.findViewById(R.id.itemDescription);
+                TextView phone = view.findViewById(R.id.item_phone);
+                TextView email = view.findViewById(R.id.item_email);
+                TextView itemid = view.findViewById(R.id.item_Id);
+
+
                 String getName = name.getText().toString();
                 String getPrice = price.getText().toString();
                 String getDesc = description.getText().toString();
+                String getPhone =phone.getText().toString();
+                String getEmail =email.getText().toString();
+                String getId =itemid.getText().toString();
+
+
+
 
                 Intent intent = new Intent(context.getApplicationContext(), Description.class);
-                intent.putExtra("name", getName);
-                intent.putExtra("price", getPrice);
-                intent.putExtra("description", getDesc);
+                intent.putExtra("Item Name", getName);
+                intent.putExtra("Item Price", getPrice);
+                intent.putExtra("Item Description", getDesc);
+                intent.putExtra("Phone", getPhone);
+                intent.putExtra("email", getEmail);
+                intent.putExtra("Item Id", getId);
+
                 context.startActivity(intent);
             }
         });
@@ -60,6 +77,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         holder.name.setText(model.getItemName());
         holder.price.setText(model.getItemPrice());
         holder.description.setText(model.getItemDescription());
+        holder.itemid.setText(model.getItem_id());
+        holder.email.setText(model.getItemEmail());
+        holder.phone.setText(model.getItemPhone());
+
+
+
+
     }
 
     @Override
@@ -68,16 +92,21 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView price;
+        private final TextView name ,price,itemid,email,phone;
+
 
         private final TextView description;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_name);
             price = itemView.findViewById(R.id.item_price);
             description = itemView.findViewById(R.id.itemDescription);
+            itemid = itemView.findViewById(R.id.item_Id);
+           email = itemView.findViewById(R.id.item_email);
+           phone = itemView.findViewById(R.id.item_phone);
+
         }
     }
 }
