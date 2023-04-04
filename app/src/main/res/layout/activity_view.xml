@@ -36,6 +36,7 @@
             android:textColor="@color/white"
             android:text="Hello world" />
 
+
     </LinearLayout>
 
 </com.google.android.material.appbar.AppBarLayout>
@@ -58,18 +59,15 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tab 2"
+            android:text="My rents"
             tools:layout_editor_absoluteX="138dp"
             tools:layout_editor_absoluteY="15dp" />
+
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tab 3" />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post" />
+            android:text="my Posts" />
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
@@ -80,19 +78,6 @@
     </androidx.viewpager2.widget.ViewPager2>
 
 
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/logout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--android:layout_below="@+id/viewpager"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:backgroundTint="@color/oxford_blue"-->
-<!--        android:text="LOGOUT"-->
-<!--        android:textColor="@color/white" />-->
 
 
 </RelativeLayout>

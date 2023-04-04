@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Return"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/oxford_blue"
+            android:id="@+id/appbar">
+            <TextView
+                android:id="@+id/bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Return this item"
+                android:textColor="@color/white"
+                android:textSize="30sp"/>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <androidx.cardview.widget.CardView
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="40dp"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:text="name" />
+
+
+                    <TextView
+                        android:id="@+id/item_pricetag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/item_name"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Item price"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:id="@+id/item_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/item_pricetag"
+                        android:layout_marginTop="10dp"
+
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="price"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:id="@+id/item_descriptiontag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_price"
+                        android:textColor="#000000"
+                        android:text="Item description" />
+                    <TextView
+                        android:id="@+id/item_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_descriptiontag"
+                        android:textColor="#000000"
+                        android:text="description" />
+                    <TextView
+                        android:id="@+id/item_phonetag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_description"
+                        android:textColor="#000000"
+                        android:text="Owner's phone Number" />
+
+                    <TextView
+                        android:id="@+id/item_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_phonetag"
+                        android:textColor="#000000"
+                        android:text="phone" />
+                    <TextView
+                        android:id="@+id/item_emailtag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_phone"
+                        android:textColor="#000000"
+                        android:text="Owner's email" />
+                    <TextView
+                        android:id="@+id/item_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_emailtag"
+                        android:textColor="#000000"
+                        android:text="email" />
+                    <TextView
+                        android:id="@+id/item_Idtag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_email"
+                        android:textColor="#000000"
+                        android:text="Item id" />
+                    <TextView
+                        android:id="@+id/item_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_below="@+id/item_Idtag"
+                        android:textColor="#000000"
+                        android:text="Item id" />
+
+                    <Button
+                        android:id="@+id/addItemButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/item_Id"
+                        android:visibility="gone"
+                        android:layout_marginLeft="20dp"
+                        android:text="add item"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout></ScrollView>

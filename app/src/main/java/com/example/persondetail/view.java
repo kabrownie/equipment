@@ -70,8 +70,8 @@ public class view extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
-    }
-}
+    }}
+
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

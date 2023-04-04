@@ -1,4 +1,4 @@
-package com.example.persondetail;
+package com.example.RentIt;
 
 import android.content.Context;
 

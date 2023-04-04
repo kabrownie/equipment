@@ -16,21 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 
-public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
+public class ItemsAdapter2 extends RecyclerView.Adapter<ItemsAdapter2.ViewHolder> {
 
     private final Context context;
     private final ArrayList<ItemModel> itemModelArrayList;
 
     CardView card;
 
-    public ItemsAdapter(Context context, ArrayList<ItemModel> itemModelArrayList) {
+    public ItemsAdapter2(Context context, ArrayList<ItemModel> itemModelArrayList) {
         this.context = context;
         this.itemModelArrayList = itemModelArrayList;
     }
 
     @NonNull
     @Override
-    public ItemsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemsAdapter2.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card, parent, false);
 
         card = view.findViewById(R.id.items_card);
@@ -57,7 +57,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
 
 
-                Intent intent = new Intent(context.getApplicationContext(), Description.class);
+                Intent intent = new Intent(context.getApplicationContext(), Return.class);
                 intent.putExtra("Item Name", getName);
                 intent.putExtra("Item Price", getPrice);
                 intent.putExtra("Item Description", getDesc);
@@ -72,7 +72,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemsAdapter2.ViewHolder holder, int position) {
 
         ItemModel model = itemModelArrayList.get(position);
         holder.name.setText(model.getItemName());
@@ -105,8 +105,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
             price = itemView.findViewById(R.id.item_price);
             description = itemView.findViewById(R.id.itemDescription);
             itemid = itemView.findViewById(R.id.item_Id);
-           email = itemView.findViewById(R.id.item_email);
-           phone = itemView.findViewById(R.id.item_phone);
+            email = itemView.findViewById(R.id.item_email);
+            phone = itemView.findViewById(R.id.item_phone);
 
         }
     }

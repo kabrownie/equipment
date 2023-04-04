@@ -6,8 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.persondetail.tabfragments.rentItems;
-import com.example.persondetail.tabfragments.tab2;
-import com.example.persondetail.tabfragments.tab3;
+import com.example.persondetail.tabfragments.rented;
 import com.example.persondetail.tabfragments.myItems;
 
 public class pagerAdapter extends FragmentStateAdapter {
@@ -22,10 +21,9 @@ switch (position){
     case 0:
         return new rentItems();
     case 1:
-        return new tab2();
+        return new rented();
+
     case 2:
-        return new tab3();
-    case 3:
         return new myItems();
 
 }
@@ -34,6 +32,6 @@ switch (position){
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }
