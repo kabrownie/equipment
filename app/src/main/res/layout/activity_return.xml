@@ -148,7 +148,7 @@
                         android:layout_below="@id/item_Id"
                         android:visibility="gone"
                         android:layout_marginLeft="20dp"
-                        android:text="add item"/>
+                        android:text="Return item"/>
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>

@@ -77,41 +77,41 @@ public class Return extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), test.class);
-//                startActivity(intent);
-                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        HashMap<String,String> data=new HashMap<>();
-                        data.put("Item Name",name.getText().toString());
-                        data.put("Item Description",description.getText().toString());
-                        data.put("Item Id",itemid.getText().toString());
-                        data.put("Item Price",price.getText().toString());
-
-                        data.put("Phone",phone.getText().toString());
-                        data.put("email",email.getText().toString());
-
-
-                        db.collection(("in-"+user.getEmail()))
-                                .document(name.getText().toString()).set(data)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.d(TAG, "DocumentSnapshot successfully written!");
-
-
-                                        Toast.makeText(Return.this, "Item rented.",
-                                                Toast.LENGTH_SHORT).show();
-
-                                        finish();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w(TAG, "Error adding document", e);
-
-                                    }
-                                });
-
+////                Intent intent = new Intent(getActivity(), test.class);
+////                startActivity(intent);
+//                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+//                        HashMap<String,String> data=new HashMap<>();
+//                        data.put("Item Name",name.getText().toString());
+//                        data.put("Item Description",description.getText().toString());
+//                        data.put("Item Id",itemid.getText().toString());
+//                        data.put("Item Price",price.getText().toString());
+//
+//                        data.put("Phone",phone.getText().toString());
+//                        data.put("email",email.getText().toString());
+//
+//
+//                        db.collection(("in-"+user.getEmail()))
+//                                .document(name.getText().toString()).set(data)
+//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                    @Override
+//                                    public void onSuccess(Void aVoid) {
+//                                        Log.d(TAG, "DocumentSnapshot successfully written!");
+//
+//
+//                                        Toast.makeText(Return.this, "Item rented.",
+//                                                Toast.LENGTH_SHORT).show();
+//
+//                                        finish();
+//                                    }
+//                                })
+//                                .addOnFailureListener(new OnFailureListener() {
+//                                    @Override
+//                                    public void onFailure(@NonNull Exception e) {
+//                                        Log.w(TAG, "Error adding document", e);
+//
+//                                    }
+//                                });
+//
                     }
                 });
 

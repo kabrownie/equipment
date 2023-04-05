@@ -7,6 +7,7 @@ import static com.google.firebase.database.ServerValue.TIMESTAMP;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -150,12 +151,18 @@ public class Additems extends AppCompatActivity {
                                                             Toast.LENGTH_SHORT).show();
 
                                                     finish();
+
+                                                    Intent intent = new Intent(getApplicationContext(), view.class);
+                                                    startActivity(intent);
+                                                    finish();
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
                                                     Log.w(TAG, "Error adding document", e);
+                                                    Toast.makeText(Additems.this, "Error adding data",
+                                                            Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
