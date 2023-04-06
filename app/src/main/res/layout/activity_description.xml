@@ -140,15 +140,24 @@
                     android:layout_below="@+id/item_Idtag"
                     android:textColor="#000000"
                     android:text="Item id" />
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:layout_below="@+id/item_Id"
+                    android:textColor="#000000"
+                    android:text="Item id" />
 
                 <Button
                     android:id="@+id/addItemButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/item_Id"
+                    android:layout_below="@id/status"
+
                     android:visibility="gone"
                     android:layout_marginLeft="20dp"
-                    android:text="add item"/>
+                    android:text="rent"/>
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>

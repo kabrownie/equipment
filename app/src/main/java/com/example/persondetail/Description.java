@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Description extends AppCompatActivity {
-    TextView name, price, description, phone,itemid,email;
+    TextView name, price, description, phone,itemid,email,status;
 //    String userDtl;
     FirebaseUser user;
     FirebaseAuth auth;
@@ -37,6 +37,7 @@ public class Description extends AppCompatActivity {
         phone = findViewById(R.id.item_phone);
         email =findViewById(R.id.item_email);
         itemid = findViewById(R.id.item_Id);
+        status = findViewById(R.id.status);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -64,8 +65,9 @@ public class Description extends AppCompatActivity {
         description.setText(getDescription);
             email.setText(getemail);
        phone.setText(getphone);
-
-        if (!Objects.equals(user.getEmail(), getemail)){
+       status.setText("");
+String stata =String.valueOf( status.getText());
+        if (!Objects.equals(user.getEmail(), getemail) || stata.equals("Returned")){
 
 
 
@@ -103,6 +105,9 @@ public class Description extends AppCompatActivity {
                                             Toast.LENGTH_SHORT).show();
 
                                     finish();
+                                Intent intent = new Intent(getApplicationContext(), view.class);
+                                startActivity(intent);
+                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

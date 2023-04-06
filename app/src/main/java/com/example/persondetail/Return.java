@@ -2,6 +2,8 @@ package com.example.persondetail;
 
 import static android.content.ContentValues.TAG;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,13 +14,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -77,42 +86,21 @@ public class Return extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-////                Intent intent = new Intent(getActivity(), test.class);
-////                startActivity(intent);
-//                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//                        HashMap<String,String> data=new HashMap<>();
-//                        data.put("Item Name",name.getText().toString());
-//                        data.put("Item Description",description.getText().toString());
-//                        data.put("Item Id",itemid.getText().toString());
-//                        data.put("Item Price",price.getText().toString());
-//
-//                        data.put("Phone",phone.getText().toString());
-//                        data.put("email",email.getText().toString());
-//
-//
-//                        db.collection(("in-"+user.getEmail()))
-//                                .document(name.getText().toString()).set(data)
-//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                    @Override
-//                                    public void onSuccess(Void aVoid) {
-//                                        Log.d(TAG, "DocumentSnapshot successfully written!");
-//
-//
-//                                        Toast.makeText(Return.this, "Item rented.",
-//                                                Toast.LENGTH_SHORT).show();
-//
-//                                        finish();
-//                                    }
-//                                })
-//                                .addOnFailureListener(new OnFailureListener() {
-//                                    @Override
-//                                    public void onFailure(@NonNull Exception e) {
-//                                        Log.w(TAG, "Error adding document", e);
-//
-//                                    }
-//                                });
-//
+
+                        Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+
+                        intent.putExtra("Item Name", getName);
+                        intent.putExtra("Item Price", getPrice);
+                        intent.putExtra("Item Description", getDescription);
+                        intent.putExtra("Phone", getphone);
+                        intent.putExtra("email", getemail);
+                        intent.putExtra("Item Id", getId);
+
+                 startActivity(intent);
+                 finish();
                     }
                 });
 
-            }}}
+
+
+        }}}
